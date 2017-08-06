@@ -12,8 +12,8 @@ document.addEventListener("keydown", function(ev){
 });
 
 var player = {
-  x: 50,
-  y: window.innerHeight * 0.5,
+  x: 100,
+  y: window.innerHeight * 0.5 + 50,
   velY: 10,
   sprite: f1,
   numUpdates: 0,
@@ -31,8 +31,8 @@ var player = {
       this.nextSprite();
     }
     this.y += this.velY;
-    if (this.y >= window.innerHeight * 0.5){
-      this.y = window.innerHeight * 0.5;
+    if (this.y >= window.innerHeight * 0.5 + 50){
+      this.y = window.innerHeight * 0.5 + 50;
       this.doubleJumping = false;
     }
     if (this.velY < 10){
@@ -40,7 +40,7 @@ var player = {
     }
   },
   render: function(ctx){
-    ctx.drawImage(this.sprite, this.x, this.y, 100, 100);
+    ctx.drawImage(this.sprite, this.x-50, this.y-50, 100, 100);
   }
 };
 
